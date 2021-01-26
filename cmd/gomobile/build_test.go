@@ -87,7 +87,7 @@ func TestAndroidBuild(t *testing.T) {
 	if goos == "windows" {
 		os.Setenv("HOMEDRIVE", "C:")
 	}
-	cmdBuild.flag.Parse([]string{"golang.org/x/mobile/example/basic"})
+	cmdBuild.flag.Parse([]string{"github.com/csiimobile/mobile/example/basic"})
 	oldTags := buildTags
 	buildTags = []string{"tag1"}
 	defer func() {
@@ -198,7 +198,7 @@ func TestBuildWithGoModules(t *testing.T) {
 	}
 	defer os.RemoveAll(dir)
 
-	if out, err := exec.Command("go", "build", "-o="+dir, "golang.org/x/mobile/cmd/gomobile").CombinedOutput(); err != nil {
+	if out, err := exec.Command("go", "build", "-o="+dir, "github.com/csiimobile/mobile/cmd/gomobile").CombinedOutput(); err != nil {
 		t.Fatalf("%v: %s", err, string(out))
 	}
 	path := dir
@@ -242,7 +242,7 @@ func TestBuildWithGoModules(t *testing.T) {
 			}{
 				{
 					Name: "Absolute Path",
-					Path: "golang.org/x/mobile/example/basic",
+					Path: "github.com/csiimobile/mobile/example/basic",
 				},
 				{
 					Name: "Relative Path",

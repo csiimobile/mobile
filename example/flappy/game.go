@@ -14,10 +14,10 @@ import (
 
 	_ "image/png"
 
-	"golang.org/x/mobile/asset"
-	"golang.org/x/mobile/exp/f32"
-	"golang.org/x/mobile/exp/sprite"
-	"golang.org/x/mobile/exp/sprite/clock"
+	"github.com/csiimobile/mobile/asset"
+	"github.com/csiimobile/mobile/exp/f32"
+	"github.com/csiimobile/mobile/exp/sprite"
+	"github.com/csiimobile/mobile/exp/sprite/clock"
 )
 
 const (

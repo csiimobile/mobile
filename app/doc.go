@@ -47,9 +47,9 @@ goroutine as other code that calls OpenGL.
 	import (
 		"log"
 
-		"golang.org/x/mobile/app"
-		"golang.org/x/mobile/event/lifecycle"
-		"golang.org/x/mobile/event/paint"
+		"github.com/csiimobile/mobile/app"
+		"github.com/csiimobile/mobile/event/lifecycle"
+		"github.com/csiimobile/mobile/event/paint"
 	)
 
 	func main() {
@@ -82,4 +82,4 @@ response to lifecycle events. Such packages should call:
 	app.RegisterFilter(etc)
 in an init function inside that package.
 */
-package app // import "golang.org/x/mobile/app"
+package app // import "github.com/csiimobile/mobile/app"

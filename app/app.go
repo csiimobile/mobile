@@ -7,10 +7,10 @@
 package app
 
 import (
-	"golang.org/x/mobile/event/lifecycle"
-	"golang.org/x/mobile/event/size"
-	"golang.org/x/mobile/gl"
-	_ "golang.org/x/mobile/internal/mobileinit"
+	"github.com/csiimobile/mobile/event/lifecycle"
+	"github.com/csiimobile/mobile/event/size"
+	"github.com/csiimobile/mobile/gl"
+	_ "github.com/csiimobile/mobile/internal/mobileinit"
 )
 
 // Main is called by the main.main function to run the mobile application.
