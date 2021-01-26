@@ -28,12 +28,11 @@ import (
 	"bufio"
 	"log"
 	"os"
-	"syscall"
 	"unsafe"
 )
 
 var (
-	ctag = C.CString("GoLog")
+	ctag = C.CString("CSIIGoLog")
 	// Store the writer end of the redirected stderr and stdout
 	// so that they are not garbage collected and closed.
 	stderr, stdout *os.File
@@ -71,23 +70,23 @@ func init() {
 	// android logcat includes all of log.LstdFlags
 	log.SetFlags(log.Flags() &^ log.LstdFlags)
 
-	r, w, err := os.Pipe()
-	if err != nil {
-		panic(err)
-	}
-	stderr = w
-	if err := syscall.Dup3(int(w.Fd()), int(os.Stderr.Fd()), 0); err != nil {
-		panic(err)
-	}
-	go lineLog(r, C.ANDROID_LOG_ERROR)
-
-	r, w, err = os.Pipe()
-	if err != nil {
-		panic(err)
-	}
-	stdout = w
-	if err := syscall.Dup3(int(w.Fd()), int(os.Stdout.Fd()), 0); err != nil {
-		panic(err)
-	}
-	go lineLog(r, C.ANDROID_LOG_INFO)
+	//r, w, err := os.Pipe()
+	//if err != nil {
+	//	panic(err)
+	//}
+	//stderr = w
+	//if err := syscall.Dup3(int(w.Fd()), int(os.Stderr.Fd()), 0); err != nil {
+	//	panic(err)
+	//}
+	//go lineLog(r, C.ANDROID_LOG_ERROR)
+	//
+	//r, w, err = os.Pipe()
+	//if err != nil {
+	//	panic(err)
+	//}
+	//stdout = w
+	//if err := syscall.Dup3(int(w.Fd()), int(os.Stdout.Fd()), 0); err != nil {
+	//	panic(err)
+	//}
+	//go lineLog(r, C.ANDROID_LOG_INFO)
 }
