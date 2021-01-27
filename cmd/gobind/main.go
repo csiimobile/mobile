@@ -106,6 +106,7 @@ func run() {
 			if err != nil {
 				log.Fatal(err)
 			}
+			log.Println("TempDir = " + srcDir)
 			//defer os.RemoveAll(srcDir)
 		} else {
 			srcDir, err = filepath.Abs(srcDir)
