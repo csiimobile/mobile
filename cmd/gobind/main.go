@@ -106,7 +106,7 @@ func run() {
 			if err != nil {
 				log.Fatal(err)
 			}
-			defer os.RemoveAll(srcDir)
+			//defer os.RemoveAll(srcDir)
 		} else {
 			srcDir, err = filepath.Abs(srcDir)
 			if err != nil {
